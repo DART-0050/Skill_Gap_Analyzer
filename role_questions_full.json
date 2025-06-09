@@ -1,0 +1,642 @@
+{
+  "Backend Developer": [
+    "Would you enjoy designing and maintaining server-side logic and databases?",
+    "Would you be interested in building APIs and ensuring high performance of backend services?"
+  ],
+  "Frontend Developer": [
+    "Would you like to build and optimize user-facing web interfaces?",
+    "Would you enjoy translating UI/UX designs into functional and interactive elements?"
+  ],
+  "Full Stack Developer": [
+    "Would you be interested in working on both frontend and backend systems of applications?",
+    "Would you enjoy managing end-to-end development from server to client side?"
+  ],
+  "Mobile App Developer": [
+    "Would you like to develop applications for mobile platforms like iOS or Android?",
+    "Would you enjoy optimizing mobile apps for performance and usability?"
+  ],
+  "Desktop Application Developer": [
+    "Would you like to build standalone applications for Windows, macOS, or Linux?",
+    "Would you enjoy working with GUI toolkits like Qt, Electron, or JavaFX?"
+  ],
+  "Software Engineer": [
+    "Would you enjoy solving technical problems with efficient and scalable code?",
+    "Would you like to participate in the full software development lifecycle?"
+  ],
+  "System Software Developer": [
+    "Would you be interested in developing operating systems, compilers, or device drivers?",
+    "Would you like to optimize low-level code for performance and memory efficiency?"
+  ],
+  "API Developer": [
+    "Would you enjoy designing RESTful or GraphQL APIs for applications?",
+    "Would you be interested in ensuring secure and scalable API communication?"
+  ],
+  "Frontend Web Developer": [
+    "Would you enjoy building responsive and accessible websites?",
+    "Would you be interested in working closely with designers to bring mockups to life?"
+  ],
+  "Backend Web Developer": [
+    "Would you enjoy working on databases, authentication systems, and server-side logic?",
+    "Would you like to build scalable backend architectures for web apps?"
+  ],
+  "Full Stack Web Developer": [
+    "Would you be comfortable handling frontend interfaces and backend operations simultaneously?",
+    "Would you like to work across the full web development stack?"
+  ],
+  "Web Application Developer": [
+    "Would you like to build interactive web applications using frameworks like React or Angular?",
+    "Would you enjoy integrating frontend and backend logic in web projects?"
+  ],
+  "Web UI Engineer": [
+    "Would you enjoy perfecting the look and feel of web applications?",
+    "Would you be interested in implementing pixel-perfect designs?"
+  ],
+  "WordPress Developer": [
+    "Would you like to build or customize websites using WordPress themes and plugins?",
+    "Would you enjoy developing custom themes or managing CMS content?"
+  ],
+  "JavaScript Developer": [
+    "Would you enjoy writing clean JavaScript code for interactive web features?",
+    "Would you like to explore JavaScript frameworks and libraries deeply?"
+  ],
+  "Web Performance Engineer": [
+    "Would you enjoy optimizing website speed, load time, and performance?",
+    "Would you be interested in tools like Lighthouse, WebPageTest, or Core Web Vitals?"
+  ],
+  "iOS Developer": [
+    "Would you be interested in developing and maintaining apps for Apple devices?",
+    "Would you enjoy working with Swift and the iOS SDK?"
+  ],
+  "Android Developer": [
+    "Would you enjoy developing mobile apps using Java or Kotlin?",
+    "Would you like to design user-friendly Android interfaces?"
+  ],
+  "Cross-platform Mobile Developer": [
+    "Would you be interested in creating apps that run on both iOS and Android platforms?",
+    "Would you like to work with frameworks like Flutter or React Native?"
+  ],
+  "Flutter Developer": [
+    "Would you enjoy developing apps using the Flutter framework and Dart language?",
+    "Would you like to build visually consistent apps for iOS and Android from one codebase?"
+  ],
+  "React Native Developer": [
+    "Would you enjoy using JavaScript and React to build mobile apps?",
+    "Would you like to create cross-platform mobile apps with native performance?"
+  ],
+  "Mobile UI Developer": [
+    "Would you be interested in designing and coding mobile-friendly user interfaces?",
+    "Would you like to optimize UI for different screen sizes and orientations?"
+  ],
+  "Mobile App Tester": [
+    "Would you like to test mobile apps for bugs and usability issues?",
+    "Would you enjoy working with automated testing frameworks for mobile?"
+  ],
+  "App Store Optimization Specialist": [
+    "Would you like to improve app visibility and downloads in app stores?",
+    "Would you enjoy analyzing keywords, reviews, and user feedback?"
+  ],
+  "Game Programmer": [
+    "Would you like to write code for game mechanics, AI, and rendering systems?",
+    "Would you enjoy optimizing games for performance across platforms?"
+  ],
+  "Game Designer": [
+    "Would you enjoy designing game levels, rules, and character interactions?",
+    "Would you like to shape the player's experience through gameplay design?"
+  ],
+  "3D Artist": [
+    "Would you be interested in creating 3D assets for games or simulations?",
+    "Would you enjoy modeling characters, environments, and animations?"
+  ],
+  "Unity Developer": [
+    "Would you enjoy building games using the Unity engine and C#?",
+    "Would you be interested in both 2D and 3D game development in Unity?"
+  ],
+  "Unreal Engine Developer": [
+    "Would you like to create high-fidelity games using Unreal Engine?",
+    "Would you enjoy using Blueprints or C++ to develop game mechanics?"
+  ],
+  "Game Animator": [
+    "Would you enjoy creating animations for characters, environments, or UI?",
+    "Would you like to bring game elements to life with motion?"
+  ],
+  "Gameplay Engineer": [
+    "Would you enjoy implementing game logic and interactive mechanics?",
+    "Would you like to collaborate closely with designers on player experience?"
+  ],
+  "Game Tester": [
+    "Would you like to test games for bugs and balance issues?",
+    "Would you enjoy providing feedback on gameplay quality?"
+  ],
+  "UI Designer": [
+    "Would you enjoy crafting visually appealing interfaces for digital products?",
+    "Would you like to focus on layout, color, and typography in software interfaces?"
+  ],
+  "UX Designer": [
+    "Would you be interested in researching and improving user experiences?",
+    "Would you enjoy designing workflows and wireframes for better usability?"
+  ],
+  "Interaction Designer": [
+    "Would you enjoy defining how users interact with a system or product?",
+    "Would you like to create prototypes to test and refine user interaction flows?"
+  ],
+  "Product Designer": [
+    "Would you enjoy designing intuitive and beautiful products from concept to finish?",
+    "Would you like to combine UX research and UI design in your work?"
+  ],
+  "Visual Designer": [
+    "Would you be interested in creating visual elements like icons, typography, and illustrations?",
+    "Would you enjoy enhancing the visual appeal of user interfaces?"
+  ],
+  "UX Researcher": [
+    "Would you enjoy conducting user interviews and usability tests?",
+    "Would you be interested in analyzing user behavior to improve product experiences?"
+  ],
+  "Design Systems Specialist": [
+    "Would you like to create consistent design systems and reusable UI components?",
+    "Would you enjoy ensuring design consistency across large applications?"
+  ],
+  "Accessibility Designer": [
+    "Would you like to design digital experiences that are accessible to all users?",
+    "Would you be interested in applying WCAG and inclusive design principles?"
+  ],
+  "Data Analyst": [
+    "Would you enjoy interpreting data to extract insights and trends?",
+    "Would you be interested in creating dashboards and visual reports?"
+  ],
+  "Data Scientist": [
+    "Would you like to use statistical models and machine learning to solve business problems?",
+    "Would you enjoy designing experiments and predictive models from datasets?"
+  ],
+  "Business Intelligence Analyst": [
+    "Would you enjoy analyzing business data to support decision-making?",
+    "Would you be interested in working with BI tools to visualize performance metrics?"
+  ],
+  "Quantitative Analyst": [
+    "Would you enjoy analyzing data to model financial or business scenarios?",
+    "Would you be interested in applying mathematical techniques to real-world problems?"
+  ],
+  "Statistician": [
+    "Would you enjoy applying statistical methods to interpret complex datasets?",
+    "Would you be interested in designing experiments and analyzing survey results?"
+  ],
+  "Research Scientist": [
+    "Would you like to conduct scientific studies using data and models?",
+    "Would you enjoy exploring and publishing insights from your research?"
+  ],
+  "Customer Insights Analyst": [
+    "Would you enjoy understanding customer behavior through data?",
+    "Would you like to turn customer feedback into strategic insights?"
+  ],
+  "Data Storyteller": [
+    "Would you enjoy crafting compelling narratives from data?",
+    "Would you be interested in using visualizations to explain data-driven findings?"
+  ],
+  "Machine Learning Engineer": [
+    "Would you be interested in building and deploying ML models in production?",
+    "Would you enjoy optimizing training pipelines and tuning algorithms?"
+  ],
+  "AI Researcher": [
+    "Would you like to explore cutting-edge AI problems and publish innovative findings?",
+    "Would you enjoy working on experimental AI projects and theoretical frameworks?"
+  ],
+  "NLP Engineer": [
+    "Would you enjoy developing systems that understand and generate human language?",
+    "Would you like to work on chatbots, sentiment analysis, or machine translation?"
+  ],
+  "Computer Vision Engineer": [
+    "Would you like to develop systems that analyze and interpret images or video?",
+    "Would you enjoy working on object detection, facial recognition, or image segmentation?"
+  ],
+  "Deep Learning Engineer": [
+    "Would you enjoy building and training deep neural networks for complex tasks?",
+    "Would you like to work on cutting-edge AI applications like image or speech recognition?"
+  ],
+  "AI Product Manager": [
+    "Would you like to manage AI-based products and coordinate with technical teams?",
+    "Would you enjoy planning roadmaps for AI innovations?"
+  ],
+  "ML Ops Engineer": [
+    "Would you be interested in deploying and monitoring machine learning pipelines?",
+    "Would you enjoy ensuring reliable production ML systems?"
+  ],
+  "Recommendation Systems Engineer": [
+    "Would you like to design systems that recommend products or content to users?",
+    "Would you enjoy building models to personalize user experiences?"
+  ],
+  "Big Data Engineer": [
+    "Would you like to work on large-scale data processing and storage systems?",
+    "Would you be interested in building data pipelines for massive datasets?"
+  ],
+  "Data Engineer": [
+    "Would you enjoy designing and maintaining scalable data architectures?",
+    "Would you like to implement ETL processes and ensure data quality?"
+  ],
+  "ETL Developer": [
+    "Would you be interested in extracting, transforming, and loading data between systems?",
+    "Would you like to optimize ETL workflows for performance and reliability?"
+  ],
+  "Data Pipeline Architect": [
+    "Would you like to design robust and scalable data pipelines?",
+    "Would you enjoy structuring data flow from source to destination efficiently?"
+  ],
+  "Hadoop Developer": [
+    "Would you enjoy processing big data using Hadoop tools like MapReduce and HDFS?",
+    "Would you be interested in optimizing distributed data processing?"
+  ],
+  "Spark Engineer": [
+    "Would you enjoy working with Apache Spark for big data processing?",
+    "Would you like to build high-performance applications on large datasets?"
+  ],
+  "DataOps Engineer": [
+    "Would you be interested in automating data workflows and improving pipeline reliability?",
+    "Would you enjoy working at the intersection of data engineering and operations?"
+  ],
+  "Cloud Data Engineer": [
+    "Would you like to develop cloud-native data systems?",
+    "Would you enjoy managing big data infrastructure in cloud platforms?"
+  ],
+  "Security Analyst": [
+    "Would you enjoy monitoring and responding to security threats?",
+    "Would you be interested in analyzing vulnerabilities and protecting IT systems?"
+  ],
+  "Penetration Tester": [
+    "Would you enjoy simulating cyberattacks to find weaknesses in systems?",
+    "Would you be interested in testing application and network security?"
+  ],
+  "Security Engineer": [
+    "Would you like to design and implement robust security solutions?",
+    "Would you be interested in building firewalls, intrusion detection, and other defense systems?"
+  ],
+  "Security Architect": [
+    "Would you like to design secure systems and infrastructure from the ground up?",
+    "Would you enjoy setting security policies and architecture frameworks?"
+  ],
+  "Cyber Threat Intelligence Analyst": [
+    "Would you be interested in researching cyber threats and threat actors?",
+    "Would you enjoy gathering intelligence to proactively defend systems?"
+  ],
+  "SOC Analyst": [
+    "Would you like to monitor security alerts in a Security Operations Center?",
+    "Would you enjoy investigating incidents and escalating threats?"
+  ],
+  "Incident Response Specialist": [
+    "Would you enjoy responding to and analyzing cybersecurity incidents?",
+    "Would you like to help recover from attacks and strengthen defenses?"
+  ],
+  "Compliance Analyst": [
+    "Would you enjoy ensuring that systems follow cybersecurity laws and regulations?",
+    "Would you like to audit security policies and support certification efforts?"
+  ],
+  "Cloud Engineer": [
+    "Would you enjoy managing cloud infrastructure and services?",
+    "Would you be interested in deploying and maintaining scalable cloud applications?"
+  ],
+  "Cloud Architect": [
+    "Would you like to design cloud-based systems and infrastructure?",
+    "Would you be interested in selecting technologies and defining cloud strategies?"
+  ],
+  "Cloud Administrator": [
+    "Would you enjoy configuring and monitoring cloud resources?",
+    "Would you like to handle backups, patches, and access control in cloud environments?"
+  ],
+  "Cloud Security Specialist": [
+    "Would you enjoy securing cloud-based infrastructure and data?",
+    "Would you like to design and monitor cloud security practices?"
+  ],
+  "DevOps Cloud Engineer": [
+    "Would you enjoy automating the deployment and scaling of cloud infrastructure?",
+    "Would you like to integrate CI/CD pipelines with cloud-native tools and services?"
+  ],
+  "Cloud Solutions Consultant": [
+    "Would you enjoy advising businesses on cloud strategies and solutions?",
+    "Would you like to architect and recommend cloud-based services?"
+  ],
+  "AWS/GCP/Azure Specialist": [
+    "Would you enjoy mastering specific cloud platforms and tools?",
+    "Would you like to design infrastructure using AWS, GCP, or Azure services?"
+  ],
+  "Cloud Operations Manager": [
+    "Would you like to lead the operations of cloud systems and ensure uptime?",
+    "Would you enjoy managing teams and processes in cloud environments?"
+  ],
+  "DevOps Engineer": [
+    "Would you be interested in automating and streamlining development and deployment processes?",
+    "Would you enjoy integrating CI/CD pipelines and infrastructure as code?"
+  ],
+  "Site Reliability Engineer": [
+    "Would you like to ensure availability and reliability of systems in production?",
+    "Would you be interested in building tools for monitoring and incident response?"
+  ],
+  "Release Engineer": [
+    "Would you enjoy coordinating software releases and deployments?",
+    "Would you like to automate and streamline delivery pipelines?"
+  ],
+  "Infrastructure Automation Engineer": [
+    "Would you enjoy automating provisioning and configuration of infrastructure?",
+    "Would you like to use tools like Terraform or Ansible?"
+  ],
+  "Platform Engineer": [
+    "Would you enjoy building internal platforms to support development teams?",
+    "Would you like to ensure scalability and reliability of shared services?"
+  ],
+  "Build and Release Engineer": [
+    "Would you enjoy managing build systems and deployment pipelines?",
+    "Would you like to ensure consistent and reliable software releases?"
+  ],
+  "CI/CD Engineer": [
+    "Would you enjoy implementing continuous integration and deployment pipelines?",
+    "Would you like to improve code delivery speed and reliability?"
+  ],
+  "Monitoring Specialist": [
+    "Would you enjoy setting up observability tools and dashboards?",
+    "Would you like to ensure uptime and performance through proactive alerts?"
+  ],
+  "Network Engineer": [
+    "Would you enjoy designing and maintaining computer networks?",
+    "Would you like to troubleshoot and optimize network performance?"
+  ],
+  "Infrastructure Engineer": [
+    "Would you be interested in building and supporting enterprise IT infrastructure?",
+    "Would you like to manage physical and virtual systems and networks?"
+  ],
+  "Network Security Engineer": [
+    "Would you enjoy securing network infrastructure from cyber threats?",
+    "Would you like to configure firewalls, VPNs, and security protocols?"
+  ],
+  "Wireless Network Specialist": [
+    "Would you enjoy setting up and troubleshooting wireless networks?",
+    "Would you be interested in optimizing Wi-Fi coverage and performance?"
+  ],
+  "Infrastructure Architect": [
+    "Would you like to design and plan enterprise IT infrastructure?",
+    "Would you enjoy defining architecture for network, compute, and storage systems?"
+  ],
+  "IT Infrastructure Analyst": [
+    "Would you enjoy analyzing and optimizing IT infrastructure usage?",
+    "Would you like to evaluate hardware and software for efficiency?"
+  ],
+  "Network Administrator": [
+    "Would you like to manage network configurations, users, and permissions?",
+    "Would you enjoy monitoring network health and resolving issues?"
+  ],
+  "SDN Engineer": [
+    "Would you enjoy working on Software Defined Networking technologies?",
+    "Would you be interested in automating network configuration and management?"
+  ],
+  "IT Support Specialist": [
+    "Would you enjoy assisting users with technical issues and troubleshooting problems?",
+    "Would you like to support hardware and software systems across the organization?"
+  ],
+  "System Administrator": [
+    "Would you be interested in managing system performance and ensuring uptime?",
+    "Would you enjoy handling network services, backups, and user access?"
+  ],
+  "Helpdesk Technician": [
+    "Would you enjoy assisting users with basic technical issues?",
+    "Would you like to troubleshoot hardware and software problems in real-time?"
+  ],
+  "IT Technician": [
+    "Would you enjoy installing and maintaining IT equipment and software?",
+    "Would you like to support the day-to-day operations of IT systems?"
+  ],
+  "Technical Support Engineer": [
+    "Would you enjoy solving customer-reported technical issues?",
+    "Would you like to provide detailed product support and troubleshooting?"
+  ],
+  "Desktop Support Specialist": [
+    "Would you like to support end-users with desktop and laptop systems?",
+    "Would you enjoy installing software and resolving user access issues?"
+  ],
+  "IT Operations Analyst": [
+    "Would you enjoy monitoring IT operations and resolving incidents?",
+    "Would you like to ensure the health of systems and services?"
+  ],
+  "Network Support Specialist": [
+    "Would you like to provide support for network connectivity and configuration?",
+    "Would you enjoy helping users troubleshoot internet and internal network issues?"
+  ],
+  "Database Administrator": [
+    "Would you like to manage and maintain databases for performance and security?",
+    "Would you enjoy performing backups, tuning queries, and managing user access?"
+  ],
+  "Data Warehouse Specialist": [
+    "Would you enjoy building and optimizing large data warehouses?",
+    "Would you be interested in structuring data for reporting and analytics?"
+  ],
+  "Database Developer": [
+    "Would you enjoy designing and developing database schemas and queries?",
+    "Would you like to write stored procedures and functions for applications?"
+  ],
+  "SQL Specialist": [
+    "Would you enjoy writing efficient SQL queries and optimizing performance?",
+    "Would you like to work with relational databases extensively?"
+  ],
+  "NoSQL Database Expert": [
+    "Would you enjoy working with NoSQL databases like MongoDB or Cassandra?",
+    "Would you like to model data for scalability and flexibility?"
+  ],
+  "Database Architect": [
+    "Would you like to design and standardize enterprise database systems?",
+    "Would you enjoy setting data models and performance standards?"
+  ],
+  "Performance Tuning Expert": [
+    "Would you enjoy analyzing and improving database performance?",
+    "Would you like to optimize queries, indexes, and storage structures?"
+  ],
+  "Cloud Database Manager": [
+    "Would you like to manage databases hosted on cloud platforms?",
+    "Would you enjoy ensuring availability, security, and scalability of cloud data?"
+  ],
+  "Blockchain Developer": [
+    "Would you be interested in building decentralized applications and smart contracts?",
+    "Would you like to work on blockchain protocols and consensus algorithms?"
+  ],
+  "Smart Contract Developer": [
+    "Would you enjoy writing secure and efficient smart contracts?",
+    "Would you be interested in testing and deploying contracts on blockchain platforms?"
+  ],
+  "Solidity Engineer": [
+    "Would you enjoy writing smart contracts using Solidity?",
+    "Would you like to build decentralized applications on Ethereum?"
+  ],
+  "Blockchain Architect": [
+    "Would you like to design secure and scalable blockchain infrastructure?",
+    "Would you enjoy selecting consensus algorithms and data structures for DApps?"
+  ],
+  "DApp Developer": [
+    "Would you enjoy building decentralized applications that interact with blockchains?",
+    "Would you like to work with Web3 technologies and frameworks?"
+  ],
+  "Blockchain QA Engineer": [
+    "Would you like to test smart contracts and blockchain apps for security and bugs?",
+    "Would you enjoy automating testing for decentralized systems?"
+  ],
+  "Crypto Wallet Developer": [
+    "Would you enjoy developing digital wallets to manage cryptocurrency?",
+    "Would you like to work on secure key storage and transaction signing?"
+  ],
+  "Tokenomics Analyst": [
+    "Would you enjoy designing and analyzing token economies for crypto projects?",
+    "Would you like to study user behavior and incentives in blockchain ecosystems?"
+  ],
+  "Embedded Systems Engineer": [
+    "Would you be interested in developing software for embedded hardware systems?",
+    "Would you enjoy working with microcontrollers, sensors, and real-time systems?"
+  ],
+  "IoT Developer": [
+    "Would you like to build smart devices and IoT solutions?",
+    "Would you enjoy integrating sensors, connectivity, and data processing in devices?"
+  ],
+  "Firmware Engineer": [
+    "Would you like to write low-level code for microcontrollers and chips?",
+    "Would you enjoy optimizing hardware-software interaction?"
+  ],
+  "IoT Security Analyst": [
+    "Would you enjoy analyzing security vulnerabilities in connected devices?",
+    "Would you like to protect smart devices from remote attacks?"
+  ],
+  "Embedded Software Developer": [
+    "Would you enjoy developing software that runs on constrained embedded devices?",
+    "Would you like to optimize code for memory and power efficiency?"
+  ],
+  "Hardware-Software Integrator": [
+    "Would you enjoy integrating sensors, actuators, and software in hardware products?",
+    "Would you like to validate functionality across the full embedded stack?"
+  ],
+  "Field Application Engineer": [
+    "Would you like to support customers in implementing embedded or IoT solutions?",
+    "Would you enjoy troubleshooting and deploying tech in real-world environments?"
+  ],
+  "IoT Product Designer": [
+    "Would you enjoy designing user-centric smart devices?",
+    "Would you like to combine electronics, firmware, and user experience design?"
+  ],
+  "AR Developer": [
+    "Would you enjoy building augmented reality applications and features?",
+    "Would you be interested in integrating digital content into real-world environments?"
+  ],
+  "VR Developer": [
+    "Would you like to develop immersive virtual reality experiences?",
+    "Would you enjoy working with 3D engines and interaction design in VR?"
+  ],
+  "XR Designer": [
+    "Would you enjoy designing mixed reality experiences?",
+    "Would you like to create intuitive interactions in virtual and augmented spaces?"
+  ],
+  "3D Interaction Designer": [
+    "Would you enjoy designing how users interact with 3D environments?",
+    "Would you like to create intuitive control schemes for AR/VR apps?"
+  ],
+  "Unity AR/VR Engineer": [
+    "Would you enjoy using Unity to create immersive AR/VR experiences?",
+    "Would you like to implement spatial tracking, interactions, and rendering?"
+  ],
+  "Simulation Developer": [
+    "Would you enjoy building virtual simulations for training or education?",
+    "Would you like to replicate real-world physics and systems in software?"
+  ],
+  "AR/VR Tester": [
+    "Would you like to test virtual reality and augmented reality experiences?",
+    "Would you enjoy identifying bugs in 3D environments and user interactions?"
+  ],
+  "Spatial Computing Engineer": [
+    "Would you enjoy developing applications that understand spatial environments?",
+    "Would you like to work on SLAM, hand tracking, and spatial mapping?"
+  ],
+  "Robotics Engineer": [
+    "Would you enjoy designing and programming robotic systems?",
+    "Would you be interested in working on automation, sensing, and control systems?"
+  ],
+  "Automation Engineer": [
+    "Would you be interested in creating systems that reduce manual effort and increase efficiency?",
+    "Would you like to work on control systems, sensors, and automation software?"
+  ],
+  "Mechatronics Engineer": [
+    "Would you enjoy working at the intersection of mechanical, electrical, and software engineering?",
+    "Would you like to build and program intelligent mechanical systems?"
+  ],
+  "Control Systems Engineer": [
+    "Would you enjoy designing control systems for robotics and automation?",
+    "Would you like to implement PID controllers and feedback systems?"
+  ],
+  "Robot Software Developer": [
+    "Would you enjoy programming robots for navigation and task execution?",
+    "Would you like to integrate software with robotic sensors and actuators?"
+  ],
+  "ROS Developer": [
+    "Would you enjoy building robotics applications using ROS (Robot Operating System)?",
+    "Would you like to work with robotics frameworks and simulation environments?"
+  ],
+  "AI Robotics Specialist": [
+    "Would you like to integrate artificial intelligence into robotic systems?",
+    "Would you enjoy building robots that learn and adapt from their environments?"
+  ],
+  "Industrial Robot Technician": [
+    "Would you enjoy maintaining and troubleshooting industrial robots?",
+    "Would you like to calibrate, repair, and optimize robotic equipment?"
+  ],
+  "Product Manager": [
+    "Would you like to define product vision, roadmap, and features?",
+    "Would you enjoy working with cross-functional teams to deliver successful products?"
+  ],
+  "Product Owner": [
+    "Would you be interested in managing product backlogs and prioritizing development tasks?",
+    "Would you enjoy ensuring that product goals align with business objectives?"
+  ],
+  "Technical Product Manager": [
+    "Would you like to manage technically complex products and features?",
+    "Would you enjoy working closely with engineers to define product requirements?"
+  ],
+  "Associate Product Manager": [
+    "Would you like to start a career in product management with mentorship?",
+    "Would you enjoy supporting product teams in planning and delivery?"
+  ],
+  "Agile Product Manager": [
+    "Would you like to manage products using agile methodologies?",
+    "Would you enjoy sprint planning and backlog grooming?"
+  ],
+  "Product Strategist": [
+    "Would you enjoy setting long-term vision and goals for digital products?",
+    "Would you like to define product-market fit and innovation strategy?"
+  ],
+  "Platform Product Manager": [
+    "Would you like to manage internal or backend platforms used by other teams?",
+    "Would you enjoy focusing on scalability, APIs, and integration layers?"
+  ],
+  "Customer Experience Manager": [
+    "Would you like to improve the overall experience customers have with a product?",
+    "Would you enjoy gathering and acting on user feedback to enhance satisfaction?"
+  ],
+  "Startup Founder": [
+    "Would you like to build a technology-driven business from scratch?",
+    "Would you enjoy making strategic decisions and managing all aspects of a startup?"
+  ],
+  "Technical Co-founder": [
+    "Would you be interested in leading the technical development of a new venture?",
+    "Would you enjoy building and mentoring a technical team from the ground up?"
+  ],
+  "Innovation Manager": [
+    "Would you like to lead technology-driven innovation projects?",
+    "Would you enjoy identifying trends and launching new digital products?"
+  ],
+  "Business Technology Consultant": [
+    "Would you enjoy advising companies on using tech for business improvement?",
+    "Would you like to analyze requirements and design tech-driven strategies?"
+  ],
+  "Growth Hacker": [
+    "Would you enjoy using creative and data-driven methods to grow a tech product?",
+    "Would you like to run rapid experiments to drive user acquisition?"
+  ],
+  "Startup CTO": [
+    "Would you like to lead the technical vision of a startup?",
+    "Would you enjoy building and mentoring a tech team from scratch?"
+  ],
+  "Venture Builder": [
+    "Would you enjoy launching and growing multiple startups from idea to scale?",
+    "Would you like to build MVPs, validate markets, and iterate on business models?"
+  ],
+  "Entrepreneur-in-Residence": [
+    "Would you like to explore and incubate startup ideas inside an organization?",
+    "Would you enjoy working across product, strategy, and technology?"
+  ]
+}

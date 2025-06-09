@@ -1,0 +1,202 @@
+{
+  "Software Development": [
+    "Backend Developer",
+    "Frontend Developer",
+    "Full Stack Developer",
+    "Mobile App Developer",
+    "Desktop Application Developer",
+    "Software Engineer",
+    "System Software Developer",
+    "API Developer"
+  ],
+  "Web Development": [
+    "Frontend Web Developer",
+    "Backend Web Developer",
+    "Full Stack Web Developer",
+    "Web Application Developer",
+    "Web UI Engineer",
+    "WordPress Developer",
+    "JavaScript Developer",
+    "Web Performance Engineer"
+  ],
+  "Mobile App Development": [
+    "iOS Developer",
+    "Android Developer",
+    "Cross-platform Mobile Developer",
+    "Flutter Developer",
+    "React Native Developer",
+    "Mobile UI Developer",
+    "Mobile App Tester",
+    "App Store Optimization Specialist"
+  ],
+  "Game Development": [
+    "Game Programmer",
+    "Game Designer",
+    "3D Artist",
+    "Unity Developer",
+    "Unreal Engine Developer",
+    "Game Animator",
+    "Gameplay Engineer",
+    "Game Tester"
+  ],
+  "UI/UX Design": [
+    "UI Designer",
+    "UX Designer",
+    "Interaction Designer",
+    "Product Designer",
+    "Visual Designer",
+    "UX Researcher",
+    "Design Systems Specialist",
+    "Accessibility Designer"
+  ],
+  "Data Science": [
+    "Data Analyst",
+    "Data Scientist",
+    "Business Intelligence Analyst",
+    "Quantitative Analyst",
+    "Statistician",
+    "Research Scientist",
+    "Customer Insights Analyst",
+    "Data Storyteller"
+  ],
+  "Machine Learning & AI": [
+    "Machine Learning Engineer",
+    "AI Researcher",
+    "NLP Engineer",
+    "Computer Vision Engineer",
+    "Deep Learning Engineer",
+    "AI Product Manager",
+    "ML Ops Engineer",
+    "Recommendation Systems Engineer"
+  ],
+  "Big Data & Data Engineering": [
+    "Big Data Engineer",
+    "Data Engineer",
+    "ETL Developer",
+    "Data Pipeline Architect",
+    "Hadoop Developer",
+    "Spark Engineer",
+    "DataOps Engineer",
+    "Cloud Data Engineer"
+  ],
+  "Cybersecurity": [
+    "Security Analyst",
+    "Penetration Tester",
+    "Security Engineer",
+    "Security Architect",
+    "Cyber Threat Intelligence Analyst",
+    "SOC Analyst",
+    "Incident Response Specialist",
+    "Compliance Analyst"
+  ],
+  "Cloud Computing": [
+    "Cloud Engineer",
+    "Cloud Architect",
+    "Cloud Administrator",
+    "Cloud Security Specialist",
+    "DevOps Cloud Engineer",
+    "Cloud Solutions Consultant",
+    "AWS/GCP/Azure Specialist",
+    "Cloud Operations Manager"
+  ],
+  "DevOps & SRE": [
+    "DevOps Engineer",
+    "Site Reliability Engineer",
+    "Release Engineer",
+    "Infrastructure Automation Engineer",
+    "Platform Engineer",
+    "Build and Release Engineer",
+    "CI/CD Engineer",
+    "Monitoring Specialist"
+  ],
+  "Networking & Infrastructure": [
+    "Network Engineer",
+    "Infrastructure Engineer",
+    "Network Security Engineer",
+    "Wireless Network Specialist",
+    "Infrastructure Architect",
+    "IT Infrastructure Analyst",
+    "Network Administrator",
+    "SDN Engineer"
+  ],
+  "IT Support & System Administration": [
+    "IT Support Specialist",
+    "System Administrator",
+    "Helpdesk Technician",
+    "IT Technician",
+    "Technical Support Engineer",
+    "Desktop Support Specialist",
+    "IT Operations Analyst",
+    "Network Support Specialist"
+  ],
+  "Database Administration": [
+    "Database Administrator",
+    "Data Warehouse Specialist",
+    "Database Developer",
+    "SQL Specialist",
+    "NoSQL Database Expert",
+    "Database Architect",
+    "Performance Tuning Expert",
+    "Cloud Database Manager"
+  ],
+  "Blockchain Development": [
+    "Blockchain Developer",
+    "Smart Contract Developer",
+    "Solidity Engineer",
+    "Blockchain Architect",
+    "DApp Developer",
+    "Blockchain QA Engineer",
+    "Crypto Wallet Developer",
+    "Tokenomics Analyst"
+  ],
+  "IoT & Embedded Systems": [
+    "Embedded Systems Engineer",
+    "IoT Developer",
+    "Firmware Engineer",
+    "IoT Security Analyst",
+    "Embedded Software Developer",
+    "Hardware-Software Integrator",
+    "Field Application Engineer",
+    "IoT Product Designer"
+  ],
+  "AR/VR (Augmented & Virtual Reality)": [
+    "AR Developer",
+    "VR Developer",
+    "XR Designer",
+    "3D Interaction Designer",
+    "Unity AR/VR Engineer",
+    "Simulation Developer",
+    "AR/VR Tester",
+    "Spatial Computing Engineer"
+  ],
+  "Robotics": [
+    "Robotics Engineer",
+    "Automation Engineer",
+    "Mechatronics Engineer",
+    "Control Systems Engineer",
+    "Robot Software Developer",
+    "ROS Developer",
+    "AI Robotics Specialist",
+    "Industrial Robot Technician"
+  ],
+  "Digital Product Management": [
+    "Product Manager",
+    "Product Owner",
+    "Technical Product Manager",
+    "Associate Product Manager",
+    "Agile Product Manager",
+    "Product Strategist",
+    "Platform Product Manager",
+    "Customer Experience Manager"
+  ],
+  "Tech Entrepreneurship": [
+    "Startup Founder",
+    "Technical Co-founder",
+    "Innovation Manager",
+    "Business Technology Consultant",
+    "Growth Hacker",
+    "Startup CTO",
+    "Venture Builder",
+    "Entrepreneur-in-Residence"
+  ]
+}
