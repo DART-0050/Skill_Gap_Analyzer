@@ -1,0 +1,118 @@
+{
+  "Data Scientist": [
+    "Python",
+    "SQL",
+    "Statistics",
+    "Machine Learning",
+    "Data Analysis",
+    "Pandas",
+    "NumPy",
+    "Scikit-learn",
+    "Data Visualization",
+    "R",
+    "Mathematics"
+  ],
+  "Frontend Developer": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React.js",
+    "TypeScript",
+    "CSS Grid & Flexbox",
+    "Responsive Design",
+    "Git",
+    "Webpack",
+    "Browser DevTools"
+  ],
+  "Backend Developer": [
+    "Python",
+    "Node.js",
+    "SQL",
+    "API Development",
+    "Database Design",
+    "Git",
+    "Docker",
+    "Authentication",
+    "Server Architecture",
+    "Testing"
+  ],
+  "DevOps Engineer": [
+    "Linux",
+    "Docker",
+    "Kubernetes",
+    "CI/CD",
+    "Bash",
+    "Cloud Computing",
+    "Infrastructure as Code",
+    "Monitoring",
+    "Git",
+    "Python"
+  ],
+  "Machine Learning Engineer": [
+    "Python",
+    "Machine Learning",
+    "Deep Learning",
+    "TensorFlow",
+    "PyTorch",
+    "Data Engineering",
+    "MLOps",
+    "Statistics",
+    "Git",
+    "Docker"
+  ],
+  "UI/UX Designer": [
+    "Figma",
+    "Design Thinking",
+    "Wireframing",
+    "Prototyping",
+    "User Research",
+    "Usability Testing",
+    "Typography",
+    "Color Theory",
+    "Accessibility"
+  ],
+  "Cybersecurity Analyst": [
+    "Networking",
+    "Python",
+    "Security Frameworks",
+    "Threat Analysis",
+    "Incident Response",
+    "Risk Assessment",
+    "Vulnerability Assessment",
+    "Security Tools"
+  ],
+  "Cloud Engineer": [
+    "AWS",
+    "Azure",
+    "GCP",
+    "Docker",
+    "Kubernetes",
+    "Infrastructure as Code",
+    "Networking",
+    "Security",
+    "Monitoring",
+    "Scripting"
+  ],
+  "Full Stack Developer": [
+    "JavaScript",
+    "React.js",
+    "Node.js",
+    "SQL",
+    "HTML",
+    "CSS",
+    "Git",
+    "API Development",
+    "Database Design",
+    "DevOps"
+  ],
+  "Product Manager": [
+    "Product Strategy",
+    "User Research",
+    "Data Analysis",
+    "Agile",
+    "Roadmapping",
+    "Stakeholder Management",
+    "Analytics",
+    "A/B Testing"
+  ]
+}

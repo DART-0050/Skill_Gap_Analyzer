@@ -1,0 +1,102 @@
+{
+  "Software Development": [
+    "Do you enjoy backend programming and building APIs?",
+    "Are you comfortable with frontend development frameworks?",
+    "Are you interested in full stack development roles?"
+  ],
+  "Web Development": [
+    "Do you have experience with web frontend technologies like HTML, CSS, or JavaScript?",
+    "Are you familiar with backend web frameworks?",
+    "Would you like to build full stack web applications?"
+  ],
+  "Mobile App Development": [
+    "Have you developed apps for iOS or Android platforms?",
+    "Do you enjoy coding in Swift, Kotlin, or cross-platform frameworks?",
+    "Are you interested in mobile user experience design?"
+  ],
+  "Game Development": [
+    "Do you like programming game mechanics or designing levels?",
+    "Are you experienced in 3D modeling or game art creation?",
+    "Are you passionate about game storytelling or interaction design?"
+  ],
+  "UI/UX Design": [
+    "Do you enjoy designing user interfaces or improving user experiences?",
+    "Are you skilled with design tools like Figma or Adobe XD?",
+    "Are you interested in interaction and visual design?"
+  ],
+  "Data Science": [
+    "Have you worked on data analysis or visualization projects?",
+    "Are you familiar with statistical modeling and hypothesis testing?",
+    "Would you like to work with tools like Python or R for data?"
+  ],
+  "Machine Learning & AI": [
+    "Do you enjoy building machine learning models or AI applications?",
+    "Are you experienced with neural networks or deep learning?",
+    "How interested are you in natural language processing or computer vision?"
+  ],
+  "Big Data & Data Engineering": [
+    "Have you worked with big data platforms like Hadoop or Spark?",
+    "Do you enjoy building data pipelines or ETL processes?",
+    "Are you interested in data warehousing and cloud data solutions?"
+  ],
+  "Cybersecurity": [
+    "Are you interested in identifying vulnerabilities or penetration testing?",
+    "Do you understand network security protocols and tools?",
+    "Are you interested in securing IT systems and data?"
+  ],
+  "Cloud Computing": [
+    "Have you worked with cloud platforms like AWS, Azure, or GCP?",
+    "Are you experienced in deploying applications in the cloud?",
+    "Do you understand cloud architecture and services?"
+  ],
+  "DevOps & SRE": [
+    "Do you enjoy automating deployments and infrastructure management?",
+    "Are you familiar with CI/CD pipelines and monitoring tools?",
+    "How comfortable are you with site reliability engineering principles?"
+  ],
+  "Networking & Infrastructure": [
+    "Have you configured networks or managed IT infrastructure?",
+    "Are you knowledgeable about routers, switches, and firewalls?",
+    "Are you interested in troubleshooting network issues?"
+  ],
+  "IT Support & System Administration": [
+    "Do you have experience providing IT support or helpdesk services?",
+    "Are you familiar with system administration and maintenance?",
+    "How comfortable are you managing user accounts and permissions?"
+  ],
+  "Database Administration": [
+    "Have you managed relational or NoSQL databases?",
+    "Are you skilled in writing queries and optimizing performance?",
+    "Are you interested in database backup and recovery?"
+  ],
+  "Blockchain Development": [
+    "Are you interested in building blockchain applications or smart contracts?",
+    "Do you understand decentralized systems and cryptography?",
+    "How excited are you about blockchain protocols and platforms?"
+  ],
+  "IoT & Embedded Systems": [
+    "Have you developed applications for IoT devices or embedded systems?",
+    "Are you familiar with hardware programming and sensors?",
+    "Are you interested in integrating IoT devices with cloud services?"
+  ],
+  "AR/VR (Augmented & Virtual Reality)": [
+    "Do you have experience developing AR or VR applications?",
+    "Are you interested in 3D modeling and immersive experiences?",
+    "How passionate are you about virtual reality technology?"
+  ],
+  "Robotics": [
+    "Are you interested in robot design and control systems?",
+    "Have you worked on automation or mechatronics projects?",
+    "Are you interested in programming robotic platforms?"
+  ],
+  "Digital Product Management": [
+    "Do you enjoy defining product roadmaps and strategies?",
+    "Are you skilled in coordinating cross-functional teams?",
+    "How interested are you in user research and feedback analysis?"
+  ],
+  "Tech Entrepreneurship": [
+    "Have you started or planned a tech startup?",
+    "Are you comfortable with fundraising and business planning?",
+    "Are you interested in leading innovation and growth?"
+  ]
+}

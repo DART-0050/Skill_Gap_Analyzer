@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "email": "alice@example.com",
+      "name": "Alice",
+      "password_hash": "$2b$12$abc1",
+      "quiz_completed": true,
+      "predicted_cluster": "Data, AI & Analytics",
+      "predicted_domain": "Data Science",
+      "predicted_role": "Data Scientist",
+      "known_skills": ["Python", "SQL", "Statistics"],
+      "learned_skills": ["Pandas", "Scikit-learn"]
+    },
+    {
+      "email": "bob@example.com",
+      "name": "Bob",
+      "password_hash": "$2b$12$abc2",
+      "quiz_completed": true,
+      "predicted_cluster": "Software & Application Development",
+      "predicted_domain": "Web Development",
+      "predicted_role": "Frontend Developer",
+      "known_skills": ["HTML", "CSS", "JavaScript"],
+      "learned_skills": ["React", "Tailwind CSS"]
+    },
+    {
+      "email": "charlie@example.com",
+      "name": "Charlie",
+      "password_hash": "$2b$12$abc3",
+      "quiz_completed": false,
+      "predicted_cluster": null,
+      "predicted_domain": null,
+      "predicted_role": null,
+      "known_skills": [],
+      "learned_skills": []
+    },
+    {
+      "email": "diana@example.com",
+      "name": "Diana",
+      "password_hash": "$2b$12$abc4",
+      "quiz_completed": true,
+      "predicted_cluster": "Software & Application Development",
+      "predicted_domain": "Software Development",
+      "predicted_role": "Backend Developer",
+      "known_skills": ["Python", "Flask", "SQL"],
+      "learned_skills": ["Docker", "Git"]
+    },
+    {
+      "email": "edward@example.com",
+      "name": "Edward",
+      "password_hash": "$2b$12$abc5",
+      "quiz_completed": true,
+      "predicted_cluster": "Infrastructure & Security",
+      "predicted_domain": "DevOps & SRE",
+      "predicted_role": "DevOps Engineer",
+      "known_skills": ["Linux", "Docker", "Bash"],
+      "learned_skills": ["Kubernetes", "CI/CD"]
+    }
+  ]
+}
