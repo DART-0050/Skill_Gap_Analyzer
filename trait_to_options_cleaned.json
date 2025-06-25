@@ -1,0 +1,242 @@
+{
+"Adaptability": [
+"Responding to unexpected challenges",
+"Adapting plans on the fly",
+"Working in dynamic environments",
+"Managing change effectively"
+],
+"Agile Methodology": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Analytical Thinking": [
+"Solving complex problems",
+"Breaking down data patterns",
+"Drawing logical conclusions",
+"Formulating strategic decisions"
+],
+"Api Integration": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Attention To Detail": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Cloud Computing": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Communication": [
+"Strongly agree",
+"Agree",
+"Disagree",
+"Strongly disagree"
+],
+"Cooperation": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Creativity": [
+"Generating new ideas",
+"Designing unique solutions",
+"Thinking outside the box",
+"Expressing through visuals or words"
+],
+"Critical Thinking": [
+"Evaluating pros and cons",
+"Challenging assumptions",
+"Making reasoned arguments",
+"Analyzing perspectives"
+],
+"Cybersecurity Fundamentals": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Data Analysis": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Database Management": [
+"Writing complex queries",
+"Designing schema layouts",
+"Optimizing database performance",
+"Ensuring data integrity"
+],
+"Decision Making": [
+"Weighing available options",
+"Making quick choices under pressure",
+"Considering long-term impact",
+"Using data for decisions"
+],
+"Dependability": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Devops Practices": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Independence": [
+"Very Important",
+"Important",
+"Somewhat Important",
+"Not at all Important"
+],
+"Initiative": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Innovation": [
+"Strongly agree",
+"Agree",
+"Disagree",
+"Strongly disagree"
+],
+"Integrity": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Javascript": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Leadership": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Learning Strategies": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Linux Administration": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Logical Reasoning": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Machine Learning": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Mobile Development": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Oral Expression": [
+"Speaking in meetings",
+"Giving presentations",
+"Explaining technical topics",
+"Persuading others effectively"
+],
+"Persistence": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Problem Solving": [
+"Troubleshooting issues",
+"Fixing bugs or errors",
+"Creating scalable solutions",
+"Finding root causes"
+],
+"Python Programming": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Stress Tolerance": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"System Architecture": [
+"Designing software architecture",
+"Choosing tech stacks",
+"Defining system components",
+"Ensuring system scalability"
+],
+"System Evaluation": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Team Collaboration": [
+"Working in cross-functional teams",
+"Sharing responsibilities",
+"Providing peer feedback",
+"Facilitating group discussions"
+],
+"Testing And Debugging": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Time Management": [
+"Very confident",
+"Somewhat confident",
+"Not confident",
+"No experience"
+],
+"Ui/Ux Design": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Version Control (Git)": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+],
+"Written Comprehension": [
+"Very interested",
+"Somewhat interested",
+"Not very interested",
+"Not at all interested"
+]
+}
