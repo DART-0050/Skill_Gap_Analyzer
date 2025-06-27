@@ -1,7 +1,7 @@
 torch>=1.13.0
-pandas
-tqdm
-flask
-transformers
-scikit-learn
-numpy
+transformers>=4.25.0
+flask>=2.2.0
+pandas>=1.4.0
+numpy>=1.22.0
+scikit-learn>=1.1.0
+tqdm>=4.64.0

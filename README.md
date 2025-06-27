@@ -1,139 +1,163 @@
+# 🚀 SkillPath AI
 
-# SkillPath AI
-
-**SkillPath AI** is an AI-powered career discovery platform that dynamically guides users through a personalized quiz to identify their ideal tech role. It uses a custom-trained model (built from scratch) and simulated datasets to predict the most suitable career path across three levels: Cluster → Domain → Role. Users then receive a skill gap analysis and curated learning resources tailored to the predicted role.
-
----
-
-## 🧠 How the Model Works
-
-🧠 Model and Quiz Engine
-SkillPath AI is powered by a custom-built model-based quiz engine built entirely from scratch — without the use of pretrained language models or NLP libraries.
-
-✅ Model Features
-Model Type: Custom RNN/Transformer-like model (trained from scratch)
-
-Input Encoding: Responses vectorized as Yes = 1, Maybe = 0.5, No = 0
-
-Architecture: Simple feed-forward or recurrent architecture using NumPy or PyTorch/TensorFlow (depending on your setup)
-No External Libraries: No HuggingFace, spaCy, NLTK, or pretrained embeddings used
-Training Data: Synthetic Q&A pairs mapped to cluster/domain/role labels
-
-Prediction Flow:
-
-Cluster prediction first (based on cluster_questions.json)
-Then domain prediction (based on domain_questions.json)
-Finally role prediction (based on role_questions_full.json)
-
-🔁 Dynamic Flow
-Stage 1: Cluster Questions
-One question from each cluster
-Score each based on response
-
-Stage 2: Domain Questions
-Pick dominant clusters (highest scores)
-Ask follow-up domain-level questions from them
-
-Stage 3: Role Questions
-Within top domains, ask specific role questions
-
-Final Output:
-
-Most probable role is predicted
-Skill gap analysis is shown based on role → required skills
-Learning recommendations are suggested
+**SkillPath AI** is an AI-powered career discovery and skill gap analysis tool. It guides users through an intelligent quiz to identify their ideal tech role and then compares their skills (from resume or selection) with real industry expectations — helping them bridge the gap.
 
 ---
 
-## 🚀 Overview
+## 🧠 How the Quiz & Model Work
 
-SkillPath AI empowers users to:
+### 🧩 3-Stage Prediction Pipeline
 
-- Discover their ideal tech role through a quiz (Cluster → Domain → Role)
-- Analyze skill gaps based on role requirements
-- Access curated learning resources to bridge those gaps
+1. **Cluster Stage**  
+   → One question from each high-level personality cluster  
+2. **Domain Stage**  
+   → Follow-up questions from top clusters  
+3. **Role Stage**  
+   → Final questions for specific roles within selected domains  
+
+🔚 Final output is a **predicted tech role** like "Data Scientist", "UX Designer", etc.
+
+---
+
+### 🧠 Model Architecture
+
+- **Built from Scratch** using PyTorch
+- **No NLP libraries** (e.g. no HuggingFace, spaCy, etc.)
+- **Input Vectorization**:  
+  - `Yes` = 1  
+  - `Maybe` = 0.5  
+  - `No` = 0
+- **Data**: Fully synthetic Q&A datasets
+- **Architecture**: Feedforward or RNN-like model using basic PyTorch
+- **Three output layers**: Cluster → Domain → Role
+
+---
+
+## 🔎 Skill Gap Analyzer
+
+After predicting the user’s role, the app lets them:
+
+- ✅ Upload a resume *(PDF)*
+- ✅ Or select skills manually
+- ✅ Then compares them against a real dataset (`skills.json`)
+- ✅ Shows:
+  - ✅ Matched Skills
+  - ❌ Missing Skills
+  - 📊 Readiness Score (percentage)
+  - 🎯 Role-specific learning suggestions *(optional)*
+
+Includes **fuzzy matching** for:
+- Roles (e.g. "Creative Thinker" ≈ "Creative Leader")
+- Skills (e.g. "Python Programming" ≈ "Python")
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React + TypeScript + Vite
-- **Styling**: Tailwind CSS, Shadcn/ui
-- **Routing & State**: React Router, Context API
-- **Mock Backend**: users.json
-- **AI Logic**: Custom RNN/Transformer (no pretrained models or libraries)
-- **Storage**: Local JSON files
+| Layer     | Tech                         |
+|----------|------------------------------|
+| Frontend | HTML, CSS, JavaScript        |
+| Backend  | Flask                         |
+| AI Model | PyTorch (custom-built)       |
+| Data     | JSON files (questions, skills, traits) |
+| Resume   | (Planned) `pdfplumber` for parsing resumes |
 
 ---
 
 ## 📁 Project Structure
 
-- `src/data/` - All JSON datasets (questions, skills, user data)
-- `src/lib/` - AI model logic, auth utilities, type definitions
-- `src/pages/` - Quiz flow, Dashboard, Auth pages
-- `src/components/` - UI components including Shadcn/ui elements
+```
+
+SkillPath_AI/
+├── app.py                  # Main Flask app
+├── templates/              # HTML frontend pages
+│   ├── SkillPath_quiz.html
+│   ├── SkillGap.html
+│   ├── About.html
+│   └── Contact.html
+├── static/                 # Backgrounds, icons, images, skills.json
+│   ├── icon.jpg
+│   └── role_skills.json
+├── modules/                # mcq_generator.py, role_classifier.py
+├── word_vocab.json         # Model vocab files
+├── user_response_classifier.pth
+├── word_seq2seq_mcq_gen.pth
+└── requirements.txt
+
+````
 
 ---
 
-## 📦 Installation & Running
+## 📦 Installation & Setup
 
-### Prerequisites
+### 🔧 Prerequisites
 
-- Node.js v18+
-- npm
+- Python 3.8+
+- pip
 - Git
-- VS Code (recommended)
 
-### Setup
-
-```bash
-npm install
-npm run dev
-```
-
-Visit: [http://localhost:5173](http://localhost:5173)
-
----
-
-## 🔑 Demo Accounts
-
-| User     | Email                | Password      | Status                    |
-|----------|----------------------|---------------|----------------------------|
-| Alice    | <alice@example.com>    | any password  | Quiz completed            |
-| Charlie  | <charlie@example.com>  | any password  | New user, no quiz taken   |
-
----
-
-## 💡 Key Features
-
-- ✅ Dynamic 3-Stage Quiz (AI-driven)
-- ✅ Model-based role prediction
-- ✅ Custom skill gap analysis
-- ✅ Auth with route protection
-- ✅ Fully responsive UI with modern design
-- ✅ Learning resources mapped to skill gaps
-
----
-
-## 🔍 Troubleshooting
-
-1. **Port in use**: Run `npm run dev -- --port 3001`
-2. **Module errors**: Run `rm -rf node_modules package-lock.json && npm install`
-3. **CSS not loading**: Restart dev server
-
----
-
-## 🚀 Deployment
+### ⚙️ Setup
 
 ```bash
-npm run build
-npm run preview
+git clone https://github.com/DART-0050/Skill_Gap_Analyser.git
+cd skillpath-ai
+pip install -r requirements.txt
+python app.py
+````
+
+Visit: [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 🧠 Sample Backend Dependencies
+
+```txt
+torch>=1.13.0
+transformers>=4.25.0
+flask>=2.2.0
+pandas>=1.4.0
+numpy>=1.22.0
+scikit-learn>=1.1.0
+tqdm>=4.64.0
+pdfplumber                  # (optional - for resume parsing)
+fuzzywuzzy[speedup]
+python-Levenshtein
 ```
 
-Deploy `/dist` folder on Netlify, Vercel, or Firebase.
+---
+
+## 🔐 Data Privacy
+
+SkillPath AI does **not collect or store any personal data**. All processing is done locally via browser and backend Flask session.
+
+---
+
+## 🚀 Features
+
+* ✅ 3-stage adaptive quiz
+* ✅ Real-time role prediction
+* ✅ Resume + manual skill comparison
+* ✅ Matched & missing skill analysis
+* ✅ Readiness score
+* ✅ Responsive UI with modern design
+* ✅ "We’re working on it" placeholder for future learning module
+* ✅ About, Contact, Navigation pages
 
 ---
 
 ## 📚 License
 
-This project is for educational and personal use.
+This project is for educational and personal use only.
+
+---
+
+## 👥 Authors
+
+* [Pathmhajam](mailto:pathmhajam@gmail.com)
+* [Samhita Shankar](mailto:samhitashankar.cse@gmail.com)
+* [Shanmathi](mailto:shanmathi.s.a.cse@gmail.com)
+
+```
+
+---
+
