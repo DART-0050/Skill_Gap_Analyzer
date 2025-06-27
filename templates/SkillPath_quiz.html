@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillPath AI</title>
+    <link rel="icon" type="image/jpg" href="./static/icon.jpg">
     <style>
         * {
             margin: 0;
@@ -70,6 +71,16 @@
         .nav-right a:hover {
             color: #667eea;
         }
+  
+        .logo img,
+        .logo-img {
+            max-width: 120px;
+            height: auto;
+            border-radius: 12px; /* optional: adds round corners */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0);
+            margin-bottom: 20px;
+        }
+
 
         .quiz-container {
             background: rgba(255, 255, 255, 0.532);
@@ -262,7 +273,7 @@
         }
 
         .question-counter {
-            color: #718096;
+            color: #c7deff;
             font-size: 1rem;
             margin-bottom: 20px;
             font-weight: 500;
@@ -360,7 +371,8 @@
 <body>
 
     <nav class="navbar">
-        <div class="nav-left">🧠 SkillPath AI</div>
+        <div class="nav-left">SkillPath AI</div>
+        <link rel="icon" type="image/jpeg" href="./static/icon.jpg">
         <div class="nav-right">
         <a href="/">Home</a>
         <a href="/about">About</a>
@@ -371,7 +383,9 @@
     <div class="quiz-container">
         <!-- Welcome Screen -->
         <div class="screen active" id="welcome-screen">
-            <div class="logo">🧠</div>
+            <div class="logo">
+                <img src="./static/icon.jpg" alt="SkillPath Logo" class="logo-img">
+            </div>
             <h1>SkillPath AI</h1>
             <p class="subtitle">
                 Discover your unique role through our advanced AI-powered assessment. 

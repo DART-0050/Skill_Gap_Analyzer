@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillPath AI - Skill Gap Analysis</title>
+    <link rel="icon" type="image/jpeg" href="./static/icon.jpg">
     <style>
         * {
             margin: 0;
@@ -390,11 +391,11 @@
         }
 
         .skill-section.matched {
-            border-left-color: #48bb78;
+            border-left-color: #67ffa6;
         }
 
         .skill-section.missing {
-            border-left-color: #f56565;
+            border-left-color: #ff8181;
         }
 
         .skill-section h4 {
@@ -405,11 +406,11 @@
         }
 
         .skill-section.matched h4 {
-            color: #48bb78;
+            color: #61f49e;
         }
 
         .skill-section.missing h4 {
-            color: #f56565;
+            color: #fd8181;
         }
 
         .skill-tags {
@@ -488,7 +489,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-left">🧠 SkillPath AI</div>
+        <div class="nav-left">SkillPath AI</div>
         <div class="nav-right">
         <a href="/">Home</a>
         <a href="/about">About</a>
@@ -638,6 +639,13 @@
         let userRole = null;
         let extractedSkills = [];
         let analysisResult = null;
+        let skillsData = {};
+
+        fetch("/static/role_skills.json")
+        .then(response => response.json())
+        .then(data => {
+            skillsData = data;
+        });
 
         // Skill categories data
         const skillCategories = {
@@ -664,7 +672,68 @@
             ],
             "Tools & Others": [
                 "Git", "GitHub", "GitLab", "Jira", "Slack", "Notion", "Postman", "VS Code", "IntelliJ", "Vim", "API Development", "REST APIs", "GraphQL", "WebSocket", "Microservices"
+            ],
+             "Cybersecurity": [
+                "Ethical Hacking", "Penetration Testing", "Network Security", "OWASP", "Burp Suite",
+                "Security Auditing", "Firewalls", "IDS/IPS", "Cryptography", "SSL/TLS", "Security Compliance",
+                "SIEM", "Incident Response", "Vulnerability Scanning", "Zero Trust", "SOC Operations"
+            ],
+
+            "AI & NLP": [
+                "Natural Language Processing", "Transformers", "Hugging Face", "SpaCy", "NLTK",
+                "Text Classification", "Named Entity Recognition", "Speech Recognition", "Question Answering",
+                "Text Generation", "LLMs", "Prompt Engineering", "LangChain", "Vector Databases", "RAG"
+            ],
+
+            "Game Development": [
+                "Unity", "Unreal Engine", "C#", "Game Design", "Blender", "Godot", "2D/3D Rendering",
+                "Animation", "Physics Engines", "Shader Programming", "Multiplayer Game Dev"
+            ],
+
+            "Blockchain & Web3": [
+                "Solidity", "Ethereum", "Smart Contracts", "Web3.js", "Ethers.js", "Hardhat", "Truffle",
+                "Polygon", "Metamask", "IPFS", "Crypto Wallets", "DeFi", "NFT Development"
+            ],
+
+            "AI/ML Ops": [
+                "Model Deployment", "MLflow", "Kubeflow", "Docker for ML", "TensorRT", "ONNX", "Seldon", "Triton",
+                "Model Monitoring", "Data Versioning", "DVC", "Cloud ML Services"
+            ],
+
+            "Software Testing & QA": [
+                "Unit Testing", "Integration Testing", "Selenium", "Playwright", "Cypress", "JUnit", "TestNG",
+                "Postman", "API Testing", "Load Testing", "Performance Testing", "Bug Tracking", "TDD", "BDD"
+            ],
+
+            "Agile & Project Management": [
+                "Agile", "Scrum", "Kanban", "Sprint Planning", "Product Backlog", "Daily Standups", "Retrospectives",
+                "Project Scheduling", "Confluence", "Burnup/Burndown Charts"
+            ],
+
+            "Big Data & Analytics": [
+                "Apache Kafka", "Apache Hive", "Apache Flink", "Presto", "ETL Pipelines", "Airflow", "BigQuery",
+                "Data Warehousing", "Data Lake", "ClickHouse", "Snowflake", "Databricks"
+            ],
+
+            "Embedded Systems & IoT": [
+                "Arduino", "Raspberry Pi", "C Programming", "Microcontrollers", "IoT Protocols", "MQTT", "Sensor Integration",
+                "Edge Computing", "RTOS", "Circuit Design"
+            ],
+
+            "AR/VR & Spatial Computing": [
+                "ARKit", "ARCore", "Unity XR", "Oculus SDK", "Spatial Mapping", "3D Modelling", "Scene Understanding",
+                "Mixed Reality Toolkit", "HoloLens"
+            ],
+
+            "Dev Tools & Build Systems": [
+                "Webpack", "Rollup", "Parcel", "Make", "CMake", "NPM", "Yarn", "pnpm", "ESLint", "Prettier", "Babel"
+            ],
+
+            "Soft Skills & Career": [
+                "Communication", "Problem Solving", "Time Management", "Team Collaboration", "Public Speaking",
+                "Critical Thinking", "Conflict Resolution", "Adaptability", "Growth Mindset", "Presentation Skills"
             ]
+
         };
 
         // Role-specific required skills (sample data)
@@ -864,29 +933,98 @@
             document.getElementById('selected-count').textContent = `${count} selected`;
         }
 
+        function findClosestRole(userRole, skillsData) {
+            let bestMatch = null;
+            let highestScore = 0;
+
+            const normalize = str => str.toLowerCase().replace(/[^a-z0-9]/gi, '');
+
+            const input = normalize(userRole);
+
+            for (let role in skillsData) {
+                const target = normalize(role);
+                let common = 0;
+
+                for (let i = 0; i < Math.min(input.length, target.length); i++) {
+                    if (input[i] === target[i]) common++;
+                }
+
+                const score = common / Math.max(input.length, target.length);
+                if (score > highestScore) {
+                    highestScore = score;
+                    bestMatch = role;
+                }
+            }
+
+            return bestMatch;
+        }
+
         function analyzeSkills() {
             document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
             document.getElementById('loading-screen').classList.add('active');
 
             setTimeout(() => {
-                const required = roleSkills[userRole] || [];
-                const matched = selectedSkills.filter(skill => required.includes(skill));
-                const missing = required.filter(skill => !selectedSkills.includes(skill));
-                const score = Math.round((matched.length / required.length) * 100);
+                const matchedRole = findClosestRole(userRole, skillsData);
+                const roleInfo = skillsData[matchedRole];
 
+                if (!roleInfo) {
+                    alert(`No skill data found for a role similar to: ${userRole}`);
+                    return;
+                }
+
+                const requiredSkills = [
+                    ...(roleInfo.Skills || []),
+                    ...(roleInfo.Abilities || []),
+                    ...(roleInfo.WorkStyles || [])
+                ];
+
+                const matched = selectedSkills.filter(skill =>
+                    fuzzyIncludes(skill, requiredSkills)
+                );
+
+                const missing = requiredSkills.filter(req =>
+                    !fuzzyIncludes(req, selectedSkills)
+                );
+
+                const score = requiredSkills.length > 0
+                    ? Math.round((matched.length / requiredSkills.length) * 100)
+                    : 0;
+
+                // Update UI
                 document.getElementById('readiness-score').textContent = `${score}%`;
                 document.getElementById('progress-fill').style.width = `${score}%`;
                 document.getElementById('matched-count').textContent = matched.length;
                 document.getElementById('missing-count').textContent = missing.length;
 
-                const matchedContainer = document.getElementById('matched-skills');
-                const missingContainer = document.getElementById('missing-skills');
-                matchedContainer.innerHTML = matched.map(s => `<span class="skill-tag matched">${s}</span>`).join('');
-                missingContainer.innerHTML = missing.map(s => `<span class="skill-tag missing">${s}</span>`).join('');
+                document.getElementById('matched-skills').innerHTML =
+                    matched.map(s => `<span class="skill-tag matched">${s}</span>`).join('');
+                document.getElementById('missing-skills').innerHTML =
+                    missing.map(s => `<span class="skill-tag missing">${s}</span>`).join('');
 
                 document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
                 document.getElementById('results-screen').classList.add('active');
-            }, 2000); // simulate processing
+            }, 2000);
+        }
+        
+        function similarityScore(a, b) {
+            a = a.toLowerCase().trim();
+            b = b.toLowerCase().trim();
+
+            if (a === b) return 1;
+
+            const longer = a.length > b.length ? a : b;
+            const shorter = a.length > b.length ? b : a;
+
+            let common = 0;
+            for (let i = 0; i < shorter.length; i++) {
+                if (longer.includes(shorter[i])) common++;
+            }
+
+            return common / longer.length;
+        }
+
+        function fuzzyIncludes(skill, skillList, threshold = 0.6) {
+            return skillList.some(item => similarityScore(skill, item) >= threshold);
         }
 
         function restartAnalysis() {
