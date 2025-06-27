@@ -99,7 +99,7 @@ SkillPath_AI/
 ### ⚙️ Setup
 
 ```bash
-git clone https://github.com/DART-0050/Skill_Gap_Analyser.git
+git clone https://github.com/DART-0050/Skill_Gap_Analyzer.git
 cd skillpath-ai
 pip install -r requirements.txt
 python app.py
