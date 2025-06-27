@@ -145,9 +145,19 @@ def final_prediction():
         "traits_analyzed": len(session["asked"])
     })
 
+@app.route('/about')
+def about_page():
+    return render_template("About.html")
+
+
 @app.route('/skillgap')
 def skill_gap_page():
     return render_template("SkillGap.html")
+
+@app.route('/contact')
+def contact_page():
+    return render_template("Contact.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

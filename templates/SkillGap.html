@@ -490,9 +490,9 @@
     <nav class="navbar">
         <div class="nav-left">🧠 SkillPath AI</div>
         <div class="nav-right">
-            <a href="/" onclick="goHome()">Home</a>
-            <a href="#" onclick="showAbout()">About</a>
-            <a href="#" onclick="alert('Contact us at hello@skillpath.ai')">Contact</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
         </div>
     </nav>
 
@@ -613,7 +613,7 @@
                 </div>
 
                 <div style="margin-top: 30px; text-align: center;">
-                    <button class="btn" onclick="window.open('/learn', '_blank')">
+                    <button class="btn" onclick="showComingSoon()">
                         <span style="margin-right: 8px;">🧠</span>
                         Start Learning
                     </button>
@@ -895,6 +895,11 @@
             document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
             document.getElementById('method-selection').classList.add('active');
         }
+
+        function showComingSoon() {
+            alert("🚧 We're working on the Skill Learning section. Stay tuned!");
+        }
+
     </script>
 </body>
 </html>
