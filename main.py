@@ -11,8 +11,8 @@ CODE_PATH = os.path.join(PROJECT_PATH, "code")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 sys.path.append(CODE_PATH)
 
-from mcq_generator import MCQGenerator
-from role_classifier import UserResponseClassifier
+from modules.mcq_generator import MCQGenerator
+from modules.role_classifier import UserResponseClassifier
 
 # Load models
 mcq = MCQGenerator(
