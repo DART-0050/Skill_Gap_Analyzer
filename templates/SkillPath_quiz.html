@@ -480,6 +480,7 @@
             <div>
                 <button class="btn" onclick="restartQuiz()">Take Quiz Again</button>
                 <button class="btn btn-secondary" onclick="shareResults()">Share Results</button>
+                <button class="btn" onclick="goToSkillGap()">Analyze Skill Gaps</button>
             </div>
         </div>
     </div>
@@ -614,6 +615,8 @@
             document.getElementById('questions-answered').textContent = data.questions_answered;
             document.getElementById('traits-analyzed').textContent = data.traits_analyzed;
             document.getElementById('accuracy-score').textContent = `${data.confidence}%`;
+
+            localStorage.setItem("predicted_role", data.role);
         }
 
 
@@ -664,6 +667,12 @@
 
         function showAbout() {
             showScreen('about-screen');
+        }
+
+        function goToSkillGap() {
+            const role = document.getElementById('predicted-role').textContent;
+            localStorage.setItem('predicted_role', role);
+            window.location.href = "/skillgap";
         }
 
         function shareResults() {

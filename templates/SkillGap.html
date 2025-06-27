@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillPath AI - Skill Gap Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-image: url('./static/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-right a {
+            margin-left: 30px;
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-right a:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #667eea;
+        }
+
+        .back-link svg {
+            margin-right: 8px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #fafafb;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #d0e1ff;
+            font-size: 1.1rem;
+        }
+
+        .predicted-role {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .screen {
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .method-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .method-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .method-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .method-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .method-card h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .method-card p {
+            color: #fefeff;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card h3 {
+            color: #e6ebf4;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .card h3 .icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .upload-area.dragover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .upload-area input[type="file"] {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #a0aec0;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            min-width: 140px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .skill-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .skill-item input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .skill-item.selected {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .search-box::placeholder {
+            color: #a0aec0;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-categories {
+            margin-bottom: 30px;
+        }
+
+        .category {
+            margin-bottom: 30px;
+        }
+
+        .category h4 {
+            color: #acc9fa;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(102, 126, 234, 0.3);
+            border-left: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results-section {
+            margin-top: 30px;
+        }
+
+        .readiness-score {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+        }
+
+        .score-circle {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 6px;
+            transition: width 1s ease;
+        }
+
+        .skills-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .skill-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid transparent;
+        }
+
+        .skill-section.matched {
+            border-left-color: #48bb78;
+        }
+
+        .skill-section.missing {
+            border-left-color: #f56565;
+        }
+
+        .skill-section h4 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-section.matched h4 {
+            color: #48bb78;
+        }
+
+        .skill-section.missing h4 {
+            color: #f56565;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .skill-tag.matched {
+            background: rgba(72, 187, 120, 0.2);
+            color: #48bb78;
+            border: 1px solid rgba(72, 187, 120, 0.3);
+        }
+
+        .skill-tag.missing {
+            background: rgba(245, 101, 101, 0.2);
+            color: #f56565;
+            border: 1px solid rgba(245, 101, 101, 0.3);
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .alert.success {
+            background: rgba(72, 187, 120, 0.1);
+            border: 1px solid rgba(72, 187, 120, 0.3);
+            color: #48bb78;
+        }
+
+        .alert.error {
+            background: rgba(245, 101, 101, 0.1);
+            border: 1px solid rgba(245, 101, 101, 0.3);
+            color: #f56565;
+        }
+
+        .selected-count {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 80px 15px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .method-selection {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">🧠 SkillPath AI</div>
+        <div class="nav-right">
+            <a href="/" onclick="goHome()">Home</a>
+            <a href="#" onclick="showAbout()">About</a>
+            <a href="#" onclick="alert('Contact us at hello@skillpath.ai')">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="javascript:history.back()" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Dashboard
+        </a>
+
+        <div class="header">
+            <h1>Skill Gap Analysis</h1>
+            <p>Analyze your current skills against your predicted role: <span class="predicted-role" id="predicted-role">Loading...</span></p>
+        </div>
+
+        <!-- Method Selection Screen -->
+        <div class="screen active" id="method-selection">
+            <div class="method-selection">
+                <div class="method-card" onclick="selectMethod('resume')">
+                    <span class="icon">📄</span>
+                    <h3>Upload Resume</h3>
+                    <p>Upload your PDF resume and we'll automatically extract your skills using AI</p>
+                    <button class="btn">Choose Method</button>
+                </div>
+
+                <div class="method-card" onclick="selectMethod('manual')">
+                    <span class="icon">✅</span>
+                    <h3>Manual Selection</h3>
+                    <p>Browse and manually select your skills from our comprehensive skill database</p>
+                    <button class="btn">Choose Method</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Upload Screen -->
+        <div class="screen" id="resume-upload">
+            <div class="card">
+                <h3><span class="icon">📄</span> Resume Upload</h3>
+                
+                <div class="upload-area" id="upload-area" onclick="document.getElementById('resume-file').click()">
+                    <div class="upload-icon">📁</div>
+                    <h4>Upload Your Resume</h4>
+                    <p>Drag and drop your PDF resume here or click to browse</p>
+                    <input type="file" id="resume-file" accept=".pdf" onchange="handleFileUpload(event)">
+                </div>
+
+                <div id="upload-status"></div>
+                <div id="extracted-skills"></div>
+
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-secondary" onclick="selectMethod('none')">Try Different Method</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manual Selection Screen -->
+        <div class="screen" id="manual-selection">
+            <div class="card">
+                <h3>
+                    <span class="icon">✅</span> 
+                    Select Your Skills
+                    <span class="selected-count" id="selected-count">0 selected</span>
+                </h3>
+                
+                <input type="text" class="search-box" id="skill-search" placeholder="Search skills..." onkeyup="filterSkills()">
+                
+                <div class="skill-categories" id="skill-categories">
+                    <!-- Skills will be populated here -->
+                </div>
+
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <button class="btn" onclick="analyzeSkills()" id="analyze-btn" disabled>
+                        <span style="margin-right: 8px;">⚡</span>
+                        Analyze Skills
+                    </button>
+                    <button class="btn btn-secondary" onclick="selectMethod('none')">Try Different Method</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="screen" id="loading-screen">
+            <div class="loading">
+                <div class="spinner"></div>
+                <h3>Analyzing Your Skills...</h3>
+                <p>Please wait while we compare your skills with your predicted role requirements</p>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="screen" id="results-screen">
+            <div class="card">
+                <h3><span class="icon">🎯</span> Analysis Results</h3>
+                
+                <div class="readiness-score">
+                    <div class="score-circle" id="readiness-score">85%</div>
+                    <p>Job Readiness Score</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="skills-breakdown">
+                    <div class="skill-section matched">
+                        <h4>✅ Matched Skills (<span id="matched-count">0</span>)</h4>
+                        <div class="skill-tags" id="matched-skills">
+                            <!-- Matched skills will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="skill-section missing">
+                        <h4>🎯 Skills to Learn (<span id="missing-count">0</span>)</h4>
+                        <div class="skill-tags" id="missing-skills">
+                            <!-- Missing skills will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; text-align: center;">
+                    <button class="btn" onclick="window.open('/learn', '_blank')">
+                        <span style="margin-right: 8px;">🧠</span>
+                        Start Learning
+                    </button>
+                    <button class="btn btn-secondary" onclick="restartAnalysis()">Analyze Again</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Required Skills Info -->
+        <div class="card" id="required-skills-info" style="display: none;">
+            <h3><span class="icon">📋</span> Required Skills for <span id="role-name"></span></h3>
+            <div class="skill-tags" id="required-skills">
+                <!-- Required skills will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentMode = 'none';
+        let selectedSkills = [];
+        let userRole = null;
+        let extractedSkills = [];
+        let analysisResult = null;
+
+        // Skill categories data
+        const skillCategories = {
+            "Programming Languages": [
+                "JavaScript", "Python", "Java", "TypeScript", "C++", "C#", "Ruby", "Go", "Rust", "PHP", "Swift", "Kotlin", "Dart", "SQL", "R"
+            ],
+            "Web Development": [
+                "HTML", "CSS", "React.js", "Vue.js", "Angular", "Node.js", "Express.js", "Next.js", "Svelte", "jQuery", "Bootstrap", "Tailwind CSS", "Sass", "Webpack", "Vite"
+            ],
+            "Mobile Development": [
+                "React Native", "Flutter", "iOS Development", "Android Development", "Expo", "Xamarin", "Ionic", "SwiftUI", "Jetpack Compose"
+            ],
+            "Data Science & ML": [
+                "Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "Pandas", "NumPy", "Scikit-learn", "Keras", "Data Analysis", "Statistics", "Data Visualization", "Jupyter", "Apache Spark", "Hadoop"
+            ],
+            "Cloud & DevOps": [
+                "AWS", "Google Cloud", "Microsoft Azure", "Docker", "Kubernetes", "Jenkins", "GitLab CI", "GitHub Actions", "Terraform", "Ansible", "Linux", "Bash", "PowerShell", "Monitoring"
+            ],
+            "Databases": [
+                "MongoDB", "PostgreSQL", "MySQL", "Redis", "Elasticsearch", "DynamoDB", "Cassandra", "SQLite", "Oracle", "SQL Server", "Firebase"
+            ],
+            "Design & UX": [
+                "Figma", "Adobe XD", "Sketch", "Photoshop", "Illustrator", "Design Thinking", "User Research", "Wireframing", "Prototyping", "Usability Testing", "Typography", "Color Theory"
+            ],
+            "Tools & Others": [
+                "Git", "GitHub", "GitLab", "Jira", "Slack", "Notion", "Postman", "VS Code", "IntelliJ", "Vim", "API Development", "REST APIs", "GraphQL", "WebSocket", "Microservices"
+            ]
+        };
+
+        // Role-specific required skills (sample data)
+        const roleSkills = {
+            "Software Engineer": ["JavaScript", "Python", "React.js", "Node.js", "Git", "SQL", "REST APIs", "Docker"],
+            "Data Scientist": ["Python", "Machine Learning", "TensorFlow", "Pandas", "NumPy", "Statistics", "Data Visualization", "Jupyter"],
+            "UX Designer": ["Figma", "Adobe XD", "Design Thinking", "User Research", "Wireframing", "Prototyping", "Usability Testing"],
+            "Product Manager": ["Project Management", "Analytics", "User Research", "Agile", "Jira", "Data Analysis"],
+            "DevOps Engineer": ["AWS", "Docker", "Kubernetes", "Jenkins", "Linux", "Terraform", "Ansible", "Monitoring"]
+        };
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserRole();
+            setupEventListeners();
+            renderSkillCategories();
+        });
+
+        function setupEventListeners() {
+            // Drag and drop functionality
+            const uploadArea = document.getElementById('upload-area');
+            
+            uploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileUpload({target: {files: files}});
+                }
+            });
+        }
+
+        function loadUserRole() {
+            // This would typically come from your backend/session
+            // For demo purposes, we'll simulate getting it
+            const savedRole = localStorage.getItem('predicted_role') || 'Software Engineer';
+            userRole = savedRole;
+            document.getElementById('predicted-role').textContent = userRole;
+            
+            // Show required skills info
+            if (roleSkills[userRole]) {
+                showRequiredSkills();
+            }
+        }
+
+        function showRequiredSkills() {
+            const requiredSkillsDiv = document.getElementById('required-skills-info');
+            const roleNameSpan = document.getElementById('role-name');
+            const requiredSkillsContainer = document.getElementById('required-skills');
+            
+            roleNameSpan.textContent = userRole;
+            requiredSkillsContainer.innerHTML = '';
+            
+            roleSkills[userRole].forEach(skill => {
+                const skillTag = document.createElement('span');
+                skillTag.className = 'skill-tag';
+                skillTag.style.background = 'rgba(102, 126, 234, 0.2)';
+                skillTag.style.color = '#667eea';
+                skillTag.style.border = '1px solid rgba(102, 126, 234, 0.3)';
+                skillTag.textContent = skill;
+                requiredSkillsContainer.appendChild(skillTag);
+            });
+            
+            requiredSkillsDiv.style.display = 'block';
+        }
+
+        function selectMethod(method) {
+            currentMode = method;
+            
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            if (method === 'resume') {
+                document.getElementById('resume-upload').classList.add('active');
+            } else if (method === 'manual') {
+                document.getElementById('manual-selection').classList.add('active');
+            } else {
+                document.getElementById('method-selection').classList.add('active');
+            }
+        }
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            if (file.type !== 'application/pdf') {
+                showAlert('Please upload a PDF file', 'error');
+                return;
+            }
+            
+            const statusDiv = document.getElementById('upload-status');
+            statusDiv.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <h4>Extracting skills from your resume...</h4>
+                    <p>This may take a few moments</p>
+                </div>
+            `;
+            
+            // Simulate skill extraction (replace with actual API call)
+            setTimeout(() => {
+                extractedSkills = simulateSkillExtraction();
+                selectedSkills = [...extractedSkills];
+                
+                statusDiv.innerHTML = `
+                    <div class="alert success">
+                        ✅ Successfully extracted ${extractedSkills.length} skills from your resume
+                    </div>
+                `;
+                
+                const skillsDiv = document.getElementById('extracted-skills');
+                skillsDiv.innerHTML = `
+                    <h4 style="margin: 20px 0 15px 0; color: #2d3748;">Extracted Skills:</h4>
+                    <div class="skill-tags">
+                        ${extractedSkills.map(skill => `
+                            <span class="skill-tag matched">${skill}</span>
+                        `).join('')}
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <button class="btn" onclick="analyzeSkills()">
+                            <span style="margin-right: 8px;">⚡</span>
+                            Analyze Skills
+                        </button>
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        function simulateSkillExtraction() {
+            // Simulate extracting skills from resume
+            const possibleSkills = [
+                "JavaScript", "Python", "React.js", "Node.js", "SQL", "Git", "HTML", "CSS",
+                "MongoDB", "Express.js", "AWS", "Docker", "REST APIs", "Machine Learning"
+            ];
+            
+            const numSkills = Math.floor(Math.random() * 6) + 6; // 6-12 skills
+            const extracted = [];
+            
+            for (let i = 0; i < numSkills; i++) {
+                const randomSkill = possibleSkills[Math.floor(Math.random() * possibleSkills.length)];
+                if (!extracted.includes(randomSkill)) {
+                    extracted.push(randomSkill);
+                }
+            }
+            
+            return extracted;
+        }
+
+        function renderSkillCategories() {
+            const container = document.getElementById('skill-categories');
+            container.innerHTML = '';
+            
+            Object.entries(skillCategories).forEach(([category, skills]) => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category';
+                categoryDiv.innerHTML = `
+                    <h4>${category}</h4>
+                    <div class="skills-grid">
+                        ${skills.map(skill => `
+                            <div class="skill-item" onclick="toggleSkill('${skill}')">
+                                <input type="checkbox" ${selectedSkills.includes(skill) ? 'checked' : ''}>
+                                <span>${skill}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(categoryDiv);
+            });
+        }
+
+        function toggleSkill(skill) {
+            if (selectedSkills.includes(skill)) {
+                selectedSkills = selectedSkills.filter(s => s !== skill);
+            } else {
+                selectedSkills.push(skill);
+            }
+
+            updateSelectedCount();
+            renderSkillCategories(); // Refresh skill grid
+            document.getElementById('analyze-btn').disabled = selectedSkills.length === 0;
+        }
+
+        function updateSelectedCount() {
+            const count = selectedSkills.length;
+            document.getElementById('selected-count').textContent = `${count} selected`;
+        }
+
+        function analyzeSkills() {
+            document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+            document.getElementById('loading-screen').classList.add('active');
+
+            setTimeout(() => {
+                const required = roleSkills[userRole] || [];
+                const matched = selectedSkills.filter(skill => required.includes(skill));
+                const missing = required.filter(skill => !selectedSkills.includes(skill));
+                const score = Math.round((matched.length / required.length) * 100);
+
+                document.getElementById('readiness-score').textContent = `${score}%`;
+                document.getElementById('progress-fill').style.width = `${score}%`;
+                document.getElementById('matched-count').textContent = matched.length;
+                document.getElementById('missing-count').textContent = missing.length;
+
+                const matchedContainer = document.getElementById('matched-skills');
+                const missingContainer = document.getElementById('missing-skills');
+                matchedContainer.innerHTML = matched.map(s => `<span class="skill-tag matched">${s}</span>`).join('');
+                missingContainer.innerHTML = missing.map(s => `<span class="skill-tag missing">${s}</span>`).join('');
+
+                document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+                document.getElementById('results-screen').classList.add('active');
+            }, 2000); // simulate processing
+        }
+
+        function restartAnalysis() {
+            selectedSkills = [];
+            extractedSkills = [];
+            document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+            document.getElementById('method-selection').classList.add('active');
+        }
+    </script>
+</body>
+</html>
