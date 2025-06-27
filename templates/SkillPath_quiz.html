@@ -25,6 +25,51 @@
             justify-content: flex-end; /* 👈 this moves content to the right */
             align-items: center;
         }
+        
+        @media (max-width: 768px) {
+            body {
+                justify-content: center;
+            }
+
+            .quiz-container {
+                margin-right: 0;
+            }
+        }
+
+        .navbar {
+            position: fixed; /* or absolute if you want it scroll with content */
+            top: 0;
+            left: 0;
+            right: 0; /* ✅ Ensure it reaches the far right */
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            z-index: 1000;
+        }
+
+
+        .nav-left {
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-right a {
+            margin-left: 30px;
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-right a:hover {
+            color: #667eea;
+        }
 
         .quiz-container {
             background: rgba(255, 255, 255, 0.532);
@@ -36,7 +81,7 @@
             padding: 40px;
             text-align: center;
             transition: all 0.6s ease;
-
+            margin-top: 100px;
             margin-right: 70px;  /* 👈 Optional: gives a little space from the edge */
         }
 
@@ -74,13 +119,13 @@
         h2 {
             font-size: 1.8rem;
             margin-bottom: 30px;
-            color: #4a5568;
+            color: #aab7cd;
             font-weight: 600;
         }
 
         .subtitle {
             font-size: 1.2rem;
-            color: #718096;
+            color: #132035;
             margin-bottom: 40px;
             line-height: 1.6;
         }
@@ -96,7 +141,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #6996ea, #d06377);
             border-radius: 4px;
             transition: width 0.5s ease;
             width: 0%;
@@ -313,6 +358,16 @@
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="nav-left">🧠 SkillPath AI</div>
+        <div class="nav-right">
+            <a href="#" onclick="showScreen('welcome-screen')">Home</a>
+            <a href="#" onclick="showAbout()">About</a>
+            <a href="#" onclick="alert('Contact us at hello@skillpath.ai')">Contact</a>
+        </div>
+    </nav>
+
     <div class="quiz-container">
         <!-- Welcome Screen -->
         <div class="screen active" id="welcome-screen">
@@ -325,6 +380,22 @@
             </p>
             <button class="btn" onclick="startQuiz()">Start Quiz</button>
         </div>
+
+        <div class="screen" id="about-screen">
+            <div class="logo">👨‍💻</div>
+            <h1>About SkillPath AI</h1>
+            <p class="subtitle">
+                SkillPath AI is an intelligent personality and career path assessment tool 
+                powered by advanced NLP and ML models. Our goal is to help you explore 
+                your strengths and match you to the roles that fit you best. 
+                And find the skill gaps you need to fill to get there.
+            </p>
+            <p class="subtitle">
+                Created with ❤️ by Samhitha, Pathmhajam and Shanmathi.
+            </p>
+            <button class="btn" onclick="showScreen('welcome-screen')">Back to Quiz</button>
+        </div>
+
 
         <!-- Quiz Screen -->
         <div class="screen" id="quiz-screen">
@@ -591,6 +662,9 @@
             showScreen('welcome-screen');
         }
 
+        function showAbout() {
+            showScreen('about-screen');
+        }
 
         function shareResults() {
             const role = document.getElementById('predicted-role').textContent;
